@@ -1,10 +1,17 @@
 const express = require('express');
-const moment = require('moment');
+const moment = require('moment-timezone');
+const config = require('../config');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.get('/api/clock', (req, res) => {
-  res.json({ time: moment().format() });
+  const timezone = config.timezone || 'UTC'; // Fallback to UTC if not specified
+  const now = moment.tz(timezone);
+
+  res.json({
+    time: now.format('YYYY-MM-DD HH:mm:ss'),
+    timezone: timezone,
+  });
 });
 
 app.listen(PORT, () => {
