@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Frame Screen Saver API testing",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

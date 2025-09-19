@@ -1,0 +1,11 @@
+{
+  "name": "frame-screen-saver-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm start --prefix clock-service\" \"npm start --prefix weather-service\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
