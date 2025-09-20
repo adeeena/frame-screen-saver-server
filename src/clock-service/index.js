@@ -11,6 +11,7 @@ app.get('/api/clock', (req, res) => {
   res.json({
     time: now.format('YYYY-MM-DD HH:mm:ss'),
     timezone: timezone,
+    utcOffset: now.format('Z')
   });
 });
 
